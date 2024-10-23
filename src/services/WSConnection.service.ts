@@ -18,6 +18,9 @@ export class WebSocketService {
   public connect(): void {
     console.log('Conectando al WebSocket... en  ' + this.url);
     this.socket$ = webSocket(this.url);
+
+    this.getMessages();
+
   }
 
   // Enviar un mensaje
