@@ -31,10 +31,6 @@ export class AppComponent {
     this.webSocketService.closeConnection();
   }
 
-  ngOnInit(): void {
-    this.webSocketService.getMessages().subscribe((message: any) => {
-      console.log('Mensaje recibido desde el servidor:', message);
-    });
-  }
+  
 
 }

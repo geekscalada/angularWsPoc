@@ -11,7 +11,7 @@ export class WebSocketService {
   private url = 'wss://ycl4wzln45.execute-api.us-west-2.amazonaws.com/prod';
 
   constructor() {
-    // this.connect();    
+      
   }
 
   // Conectar al WebSocket
@@ -19,7 +19,9 @@ export class WebSocketService {
     console.log('Conectando al WebSocket... en  ' + this.url);
     this.socket$ = webSocket(this.url);
 
-    this.getMessages();
+    this.getMessages().subscribe((message: any) => {
+        console.log('Mensaje recibido desde el servidor:', message);
+      });
 
   }
 
