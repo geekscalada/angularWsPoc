@@ -38,8 +38,10 @@ export class WebSocketService {
   // Cerrar la conexión
   public closeConnection(): void {
     this.socket$?.complete();
+    
   }
 
+  //TODO: We need to destroy subscription?
   ngOnDestroy(): void {
     this.closeConnection();
   }
